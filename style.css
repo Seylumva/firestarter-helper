@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+body {
+    background: #222;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    padding: 1rem;
+}
+
+.site-title {
+    display: flex;
+    align-items: center;
+}
+
+.site-title h1 {
+    margin-left: 1rem;
+    display: inline-block;
+}
+
+.modifiers {
+    margin-bottom: 1rem;
+}
+
+.modifier-list__item--mercedes h3 {
+    margin-bottom: 10px;
+}
+
+.modifier-list__item--mercedes form {
+    display: flex;
+    order: -1;
+}
+
+.modifier-list__item--mercedes input {
+    display: none;
+}
+
+.modifier-list__item--mercedes label {
+    padding: 0.4rem;
+    width: 50px;
+    height: 50px;
+    box-sizing: content-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: #f0a300;
+    background: crimson;
+    transition: color 250ms ease, font-size 250ms ease;
+    cursor: pointer;
+}
+
+.modifier-list__item--mercedes label:hover {
+    color: #ffef00;
+    font-size: 1.3rem;
+}
+
+.modifier-list__item--mercedes label:not(:last-child) {
+    margin-right: 5px;
+}
+
+.firestarter__section {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.firestarter__section--timer {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.firestarter__section--timer span {
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.firestarter-timer__controls {
+    display: grid;
+    grid-template-areas:
+        "cast cast"
+        "drop drop";
+    gap: 0.5rem;
+}
+
+.firestarter-timer__controls .cast-button {
+    grid-area: cast;
+}
+
+.firestarter-timer__controls .reset-button {
+    grid-area: reset;
+}
+
+.firestarter-timer__controls .burning-field-button {
+    grid-area: drop;
+}
+
+.firestarter-timer__controls button {
+    background: crimson;
+    border-radius: 5px;
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.firestarter {
+    background: #333;
+    border-radius: 8px;
+    padding: 1rem;
+}
