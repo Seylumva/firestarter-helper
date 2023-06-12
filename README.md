@@ -1,2 +1,2 @@
 # firestarter-helper
- Utility for Firestarter ring users and service sellers.
+ Utility for Firestarter ring users.
