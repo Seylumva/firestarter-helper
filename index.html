@@ -2,84 +2,67 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700;900&display=swap"
-        rel="stylesheet" />
-    <title>Firestarter Helper</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700;900&display=swap"
+    rel="stylesheet" />
+  <title>Firestarter Helper</title>
 </head>
 
 <body>
+
+  <div class="container">
     <header class="site-title">
-        <img src="./images/firestarter-ring.png" alt="Firestarter Ring" />
-        <h1>Firestarter Helper</h1>
+      <img src="./assets/firestarter-ring.png" alt="Firestarter Ring" />
+      <h1>Firestarter Helper</h1>
     </header>
-
     <section class="modifiers">
-        <h2 class="modifiers__title">Modifiers</h2>
-        <div class="modifier-list">
-            <div class="modifier-list__item modifier-list__item--mercedes">
-                <h3>Mercedes Legion Board</h3>
-                <!-- #mercedes -> Form for skill cooldown % reduction values -->
-                <form id="mercedes">
-                    <label for="none">None</label>
-                    <input type="radio" name="mercedes" id="none" value="0.00" />
-                    <label for="b">B</label>
-                    <input type="radio" name="mercedes" id="b" value="0.02" />
-                    <label for="a">A</label>
-                    <input type="radio" name="mercedes" id="a" value="0.03" />
-                    <label for="s">S</label>
-                    <input type="radio" name="mercedes" id="s" value="0.04" />
-                    <label for="ss">SS</label>
-                    <input type="radio" name="mercedes" id="ss" value="0.05" />
-                    <label for="sss">SSS</label>
-                    <input type="radio" name="mercedes" id="sss" value="0.06" />
-                </form>
-            </div>
+      <h2 class="modifiers__title">Modifiers</h2>
+      <div class="modifier-list">
+        <div class="modifier-list__item modifier-list__item--mercedes">
+          <h3>Mercedes Legion Board</h3>
+          <form id="mercedes">
+            <label for="none">None</label>
+            <input type="radio" name="mercedes" id="none" value="0.00" />
+            <label for="b">B</label>
+            <input type="radio" name="mercedes" id="b" value="0.02" />
+            <label for="a">A</label>
+            <input type="radio" name="mercedes" id="a" value="0.03" />
+            <label for="s">S</label>
+            <input type="radio" name="mercedes" id="s" value="0.04" />
+            <label for="ss">SS</label>
+            <input type="radio" name="mercedes" id="ss" value="0.05" />
+            <label for="sss">SSS</label>
+            <input type="radio" name="mercedes" id="sss" value="0.06" />
+          </form>
+          <small>* Affects cooldown of the Firestarter ring's ability</small>
         </div>
+      </div>
     </section>
-
     <main class="firestarter">
-        <h2>Firestarter Timer</h2>
-        <div class="firestarter__section firestarter__section--timer">
-            <div class="firestarter-timer__screen">
-                <span class="minutes">00m</span> <span class="seconds">00s</span>
-            </div>
-            <div class="firestarter-timer__controls">
-                <button type="button" class="cast-button">Cast / Reset</button>
-                <!-- <button type="button" class="reset-button">Reset</button> -->
-                <button type="button" class="burning-field-button">Set Burning Field Interval</button>
-            </div>
-        </div>
+      <h2>Firestarter Timer</h2>
+      <div class="timer"></div>
+      <div class="firestarter__section firestarter__section--timer">
+        <button type="button" class="button burning-field-button">Set Burning Field Interval</button>
         <div class="firestarter__section firestarter__section--cooldown">
-            <img src="./images/firestarter.png" alt="Firestarter skill">
-            <h4>Cooldown:</h4>
-            <div class="firestarter-cooldown"><span class="minutes">30</span>:<span class="seconds">00</span></div>
+          <img src="./assets/firestarter.png" alt="Firestarter skill">
+          <h4>Cooldown:</h4>
+          <div class="firestarter-cooldown"><span class="minutes">30</span>:<span class="seconds">00</span><span
+              class="delta"></span></div>
         </div>
         <div class="firestarter__section firestarter__section--intervals">
-            <h4>Burning Field Lowers At:</h4>
-            <span>Unset</span>
-        </div>
-        <!-- Future feature: Calculate cooldown vs burning field interval offset -->
-        <!-- <div class="firestarter__section firestarter__section--offset">
-            <h4>Firestarter Cooldown Offset:</h4>
-            <span>+00:05s</span>
-        </div> -->
-        <div class="firestarter__section firestarter__section--client">
-            <!-- #client -> Form for client info -->
-            <form id="client">
-                <input type="text" name="ign" id="ign" maxlength="12" placeholder="In-game name">
-                <input type="text" name="channel" id="channel" maxlength="12" placeholder="Channel">
-            </form>
+          <h4>Burning Field Lowers At:</h4>
+          <span>Unset</span>
         </div>
     </main>
+  </div>
 
-    <script src="./js/main.js" type="module"></script>
+  <script src="./js/main.js" type="module"></script>
 </body>
 
 </html>
